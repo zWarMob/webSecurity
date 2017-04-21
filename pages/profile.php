@@ -13,7 +13,7 @@ include('../templates/header.php');
                         <p class="">...</p>
             </div>
             <div class="img-s-150 m-l-r-50">
-                        <img src="../images/anonymousProfile" class="img-100" alt="Profile">
+                        <img src="../images/anonymousProfile.png" class="img-100" alt="Profile">
                                     
             </div>
     </div>
