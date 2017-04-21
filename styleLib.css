@@ -69,3 +69,10 @@ HR
 	border-style: dashed;
 	border-color: #ed6d22;
 }
+
+/***********
+FONT
+*/
+.f-w-600 {
+	font-weight: 600;
+}
