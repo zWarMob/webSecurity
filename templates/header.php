@@ -1,7 +1,7 @@
 
         <div class="navbar">
             <a id="logo" href="#">
-                <img src="images/logo.jpg" alt="">
+                <img src="../images/logo.jpg" alt="">
             </a>
             <div class="inner">
                 <input id="search" type="search" Placeholder="What are you looking for?"/>
