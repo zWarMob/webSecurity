@@ -11,4 +11,9 @@ PADDING
 */
 
 
-
+/***********
+HEIGHT
+*/
+.ContentWrapper {
+	min-height: 70vh;
+}
