@@ -25,7 +25,9 @@ include('../templates/header.php');
             </div>
     </div>
     <hr class="hr-90">
-    
+    <div class="f-c m-20">
+            <h1 class="h1">CURRENT RENTALS</h2>
+    </div>
     
     
 </div>
