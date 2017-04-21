@@ -25,11 +25,24 @@ MARGIN
 }
 
 .m-20 {
-    margin: 20px;
+	margin: 20px;
+}
+
+.m-30 {
+	border: 2px solid #ed6d22;
+	border-radius: 5px;
+	background-color: #ededed;
+	margin: 30px;
 }
 
 .m-l-r-50 {
 margin: 0px 50px;
+}
+
+
+b-2 {
+	border: 2px solid #ed6d22;
+	border-radius: 5px;
 }
 
 
