@@ -1,6 +1,6 @@
 <?php
 
-include('templates/mStart.php');
+include('//templates/mStart.php');
 
 include('templates/header.php');
 include('templates/mContent.php');
