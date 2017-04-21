@@ -43,7 +43,7 @@ include('../templates/header.php');
             <div class="f-cl-c m-20">
                 <h1 class="h1-c">HISTORY</h1>
                 <div class="b-2 m-30">
-                        <div>
+                        <div class="f-c m-20">
                         <i class="fa fa-star fa-2" aria-hidden="true"></i>
                         <i class="fa fa-star fa-4" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>

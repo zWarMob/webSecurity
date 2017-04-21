@@ -118,7 +118,16 @@ FONT
 FONT AWESOME ADDON STYLES
 */
 .fa-star {
+	font-size: 3em!important;
 	color: #ed6d22
+}
+
+.fa-star-o {
+	font-size: 3em!important;
+}
+
+.fa {
+	margin: 4px;
 }
 
 
