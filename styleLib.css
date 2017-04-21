@@ -6,6 +6,11 @@ MARGIN
 	justify-content: center;
 }
 
+.f-sa 	{
+	display: flex;
+	justify-content: space-around;
+}
+
 /***********
 MARGIN
 */
@@ -32,6 +37,13 @@ HEIGHT
 */
 .h-70 {
 	min-height: 70vh;
+}
+
+/***********
+WIDTH
+*/
+.w-250 {
+	width: 250px;
 }
 
 /***********

@@ -6,7 +6,7 @@ include('../templates/header.php');
 
 <div class="h-70">
     <div class="f-c m-20">
-            <div>
+            <div class="f-sa w-250">
                         <div>
                                     <p class="">Copenhagen</p>
                                     <p class="">24</p>
