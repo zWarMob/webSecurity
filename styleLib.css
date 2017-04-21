@@ -39,6 +39,10 @@ HEIGHT
 	min-height: 70vh;
 }
 
+.h-200 {
+	min-height: 200px;
+}
+
 /***********
 WIDTH
 */
