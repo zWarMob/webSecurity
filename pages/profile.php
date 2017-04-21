@@ -27,7 +27,7 @@ include('../templates/header.php');
             </div>
     </div>
     <hr class="hr-90">
-    <div class="f-c m-20">
+    <div class="f-cl-c m-20">
             <h1 class="h1-c">CURRENT RENTALS</h2>
             <div class="h-200">
                         <div class="img-s-150 m-l-r-50">

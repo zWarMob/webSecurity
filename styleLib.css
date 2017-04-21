@@ -1,5 +1,5 @@
 /***********
-MARGIN
+FLEX
 */
 .f-c 	{
 	display: flex;
@@ -9,6 +9,12 @@ MARGIN
 .f-sa 	{
 	display: flex;
 	justify-content: space-around;
+}
+
+.f-cl-c {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /***********
