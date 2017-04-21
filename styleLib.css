@@ -1,16 +1,14 @@
-font-family:Thao;
-
-/*MADS TEST*/
-
-test
-
-m-b-20{
-    margin-bottom: 20px;
+/***********
+MARGIN
+*/
+.m-t-10{
+	margin-top:10px;
 }
 
-w
 
-m-test {
-	This shit is counterproductive;
-}
+/***********
+PADDING
+*/
+
+
 
