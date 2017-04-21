@@ -1,6 +1,14 @@
 /***********
 MARGIN
 */
+.f-c 	{
+	display: flex;
+	justify-content: center;
+}
+
+/***********
+MARGIN
+*/
 .m-t-10{
 	margin-top:10px;
 }
