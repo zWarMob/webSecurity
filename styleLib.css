@@ -46,3 +46,14 @@ IMAGES
 	height: 150px;
 	width: 150px;
 }
+
+
+/***********
+HR
+*/
+.hr-90 {
+	width: 90vw;
+	margin: auto;
+	border-style: dashed;
+	border-color: #ed6d22;
+}

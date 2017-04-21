@@ -17,7 +17,7 @@ include('../templates/header.php');
                                     
             </div>
     </div>
-    <hr>
+    <hr class="hr-90">
     
     
     
