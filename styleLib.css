@@ -17,3 +17,16 @@ HEIGHT
 .h-70 {
 	min-height: 70vh;
 }
+
+/***********
+IMAGES
+*/
+
+.img-100 {
+	width: 100%;
+}
+
+.img-s-150 {
+	height: 150px;
+	width: 150px;
+}
