@@ -5,7 +5,7 @@ include('../templates/header.php');
 ?>
 
 <div class="h-70">
-    <div class="f-c">
+    <div class="f-c m-20">
             <div>
                         <p class="">Copenhagen</p>
                         <p class="">24</p>
@@ -17,6 +17,10 @@ include('../templates/header.php');
                                     
             </div>
     </div>
+    <hr>
+    
+    
+    
 </div>
 
 <?php
