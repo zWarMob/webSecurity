@@ -4,7 +4,7 @@ include('../templates/mStart.php');
 include('../templates/header.php');
 ?>
 
-<div class="ContentWrapper">
+<div class="contentWrapper">
     
 </div>
 
