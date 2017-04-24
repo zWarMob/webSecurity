@@ -3,7 +3,7 @@
 include('../templates/mStart.php');
 include('../templates/header.php');
 
-/*
+
 //GET THE DB CONNECTION DETAILS
 require_once 'db_connect.php';
 $user = "0001";
@@ -13,14 +13,16 @@ $result->bind_param('s', $user);
 $result->execute();
 $result->store_result();
 $result->bind_result($id,$user,$reviewer,$comment, $rating);
-$$resultCheckResult = $result->fetch();
-$$resultCheckCount = $result->num_rows;
+$resultCheckResult = $result->fetch();
+$resultCheckCount = $result->num_rows;
 
-//IF A RESULT IS FOUND THEN ASSIGN 1 TO THE SITEBAN VARIABLE FOR USE FURTHER DOWN THIS CODE
-if($result >= 1){
-            str_replace("{{CONTENT}},$comment,{{CONTENT}}");
+
+if($$resultCheckCount >= 1){
+        /*    echo str_replace('{{cCONTENT}}',$comment,'{{cCONTENT}}');*/
 }
-*/
+
+
+
     
 ?>
 
@@ -63,7 +65,7 @@ if($result >= 1){
                                     <img src="../images/genericItem.png" class="img-100" alt="Profile">
                                     
                         </div>
-                        <p class="w-300">{{cCONTENT}}</p>
+                        <p class="w-300"> <?php $replace = "{{cCONTENT}}"; ?> </p>
             </div>
             <!-- TEMPLATE END !!! -->
     </div>
@@ -74,16 +76,12 @@ if($result >= 1){
                 <h1 class="h1-c">HISTORY</h1>
                 <!-- TEMPLATE !!! -->
                 <?php
-                        $test = "4";
-                ?>
-                <div class="b-2 m-30">
-                        <div class="f-c m-20">
-                            
-                            <?php
-                            
-                                    switch ($test){
+                            $test = "0";
+                                    switch ($rating){
                                                 case "1":
                                                 echo "
+                                                <div class='b-2 m-30'>
+                                                <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
@@ -92,6 +90,8 @@ if($result >= 1){
                                                 break;
                                                 case "2":
                                                 echo "
+                                                <div class='b-2 m-30'>
+                                                <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
@@ -100,6 +100,8 @@ if($result >= 1){
                                                 break;
                                                 case "3":
                                                 echo "
+                                                <div class='b-2 m-30'>
+                                                <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
@@ -108,6 +110,8 @@ if($result >= 1){
                                                 break;
                                                 case "4":
                                                 echo "
+                                                <div class='b-2 m-30'>
+                                                <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
@@ -116,6 +120,8 @@ if($result >= 1){
                                                 break;
                                                 case "5":
                                                 echo "
+                                                <div class='b-2 m-30'>
+                                                <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2' aria-hidden='true'></i>
@@ -124,6 +130,8 @@ if($result >= 1){
                                                 break;
                                                 default:
                                                 echo "
+                                                <div class='b-2 m-30'>
+                                                <div class='f-c m-20'>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
@@ -131,29 +139,28 @@ if($result >= 1){
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>";
                                                 
                                     }
-                            ?>
-                            
-                        <!-- 
-                        <i class="fa fa-star fa-2" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-4" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        -->
+                        if ($resultCheckCount == 0){
+                                    
+                        }else{
+                                    echo "
+
                         </div>
-                        <div class="h-200 f-c m-20">
-                                    <div class="img-s-150 m-l-r-50">
-                                                <img src="../images/genericItem.png" class="img-100" alt="item">
+                        <div class=\"h-200 f-c m-20\">
+                                    <div class=\"img-s-150 m-l-r-50\">
+                                                <img src=\"../images/genericItem.png\" class=\"img-100\" alt=\"item\">
                                                 
                                     </div>
-                                    <p class="w-300">{{hCONTENT}}</p>
+                                    <p class=\"w-300\">$comment;</p>
                         </div>
-                </div>
-                <!-- TEMPLATE END !!! -->
+                </div>";} ?>
             </div>
 </div>
 
 <?php
+/*
+echo str_replace("{{cCONTENT}}","hello",$replace);
+*/
+
 include('../templates/footer.php');
 include('../templates/mEnd.php');
 
