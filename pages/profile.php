@@ -3,6 +3,7 @@
 include('../templates/mStart.php');
 include('../templates/header.php');
 
+/*
 //GET THE DB CONNECTION DETAILS
 require_once 'db_connect.php';
 $user = "0001";
@@ -19,6 +20,7 @@ $$resultCheckCount = $result->num_rows;
 if($result >= 1){
             str_replace("{{CONTENT}},$comment,{{CONTENT}}");
 }
+*/
     
 ?>
 
@@ -46,14 +48,24 @@ if($result >= 1){
     </div>
     <hr class="hr-90">
     <div class="f-cl-c m-20">
+            
+            <h4 style="text-align: center;">IF YOU ARE LOGGED IN YOU WILL SEE THE ADD OPTION</h4>
+            
+            <div class="f-cl-c m-20">
+                      <h2 class="h2-c">ADD ITEM <i class="fa fa-plus-circle" aria-hidden="true"></i></h2>  
+            </div>
+            
+            
             <h1 class="h1-c">CURRENT RENTALS</h1>
+            <!-- TEMPLATE !!! -->
             <div class="h-200 f-c m-20">
                         <div class="img-s-150 m-l-r-50">
                                     <img src="../images/genericItem.png" class="img-100" alt="Profile">
                                     
                         </div>
-                        <p class="w-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus faucibus purus vel tempor. Nam mollis ipsum risus, eget rhoncus justo euismod et. Ut ut enim nisi. Aenean in pretium turpis, non maximus orci.</p>
+                        <p class="w-300">{{cCONTENT}}</p>
             </div>
+            <!-- TEMPLATE END !!! -->
     </div>
     
     <hr class="hr-90">
@@ -62,28 +74,83 @@ if($result >= 1){
                 <h1 class="h1-c">HISTORY</h1>
                 <!-- TEMPLATE !!! -->
                 <?php
-                
+                        $test = "4";
                 ?>
                 <div class="b-2 m-30">
                         <div class="f-c m-20">
+                            
+                            <?php
+                            
+                                    switch ($test){
+                                                case "1":
+                                                echo "
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                break;
+                                                case "2":
+                                                echo "
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                break;
+                                                case "3":
+                                                echo "
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                break;
+                                                case "4":
+                                                echo "
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                break;
+                                                case "5":
+                                                echo "
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>";
+                                                break;
+                                                default:
+                                                echo "
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                
+                                    }
+                            ?>
+                            
+                        <!-- 
                         <i class="fa fa-star fa-2" aria-hidden="true"></i>
                         <i class="fa fa-star fa-4" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star-o" aria-hidden="true"></i>
+                        -->
                         </div>
                         <div class="h-200 f-c m-20">
                                     <div class="img-s-150 m-l-r-50">
-                                                <img src="../images/genericItem.png" class="img-100" alt="Profile">
+                                                <img src="../images/genericItem.png" class="img-100" alt="item">
                                                 
                                     </div>
-                                    <p class="w-300">{{CONTENT}}</p>
+                                    <p class="w-300">{{hCONTENT}}</p>
                         </div>
-                    </div>
+                </div>
                 <!-- TEMPLATE END !!! -->
             </div>
-    
-    
 </div>
 
 <?php
