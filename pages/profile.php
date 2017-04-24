@@ -17,12 +17,12 @@ $resultCheckResult = $result->fetch();
 $resultCheckCount = $result->num_rows;
 
 
-if($$resultCheckCount >= 1){
-        /*    echo str_replace('{{cCONTENT}}',$comment,'{{cCONTENT}}');*/
+/*
+while($result->fetch()) {
+    $allRows[] = $row;
+    echo $row["user"];
 }
-
-
-
+*/
     
 ?>
 
@@ -76,7 +76,7 @@ if($$resultCheckCount >= 1){
                 <h1 class="h1-c">HISTORY</h1>
                 <!-- TEMPLATE !!! -->
                 <?php
-                            $test = "0";
+                
                                     switch ($rating){
                                                 case "1":
                                                 echo "
