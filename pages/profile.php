@@ -2,8 +2,10 @@
 
 include('../templates/mStart.php');
 include('../templates/header.php');
-
-
+/*
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+*/
 //GET THE DB CONNECTION DETAILS
 require_once 'db_connect.php';
 $user = "0001";
@@ -12,17 +14,17 @@ $result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE ?");
 $result->bind_param('s', $user);
 $result->execute();
 $result->store_result();
-$result->bind_result($id,$user,$reviewer,$comment, $rating);
-$resultCheckResult = $result->fetch();
+$result->bind_result($id,$user,$reviewer,$comment, $rating, $rDate);
+/*$resultCheckResult = $result->fetch();*/
 $resultCheckCount = $result->num_rows;
-
 
 /*
 while($result->fetch()) {
-    $allRows[] = $row;
-    echo $row["user"];
-}
-*/
+    
+    echo $id;
+}*/
+
+printf ($resultCheckCount);
     
 ?>
 
@@ -76,6 +78,10 @@ while($result->fetch()) {
                 <h1 class="h1-c">HISTORY</h1>
                 <!-- TEMPLATE !!! -->
                 <?php
+                                        if ($resultCheckCount == 0){
+                                  echo "<h1>No reviews have been made yet</h1>";
+                                        }
+                while($result->fetch()) {
                 
                                     switch ($rating){
                                                 case "1":
@@ -139,20 +145,22 @@ while($result->fetch()) {
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>";
                                                 
                                     }
-                        if ($resultCheckCount == 0){
-                                    
-                        }else{
+
                                     echo "
 
                         </div>
-                        <div class=\"h-200 f-c m-20\">
+                        <div class=\"h-100 f-c m-20\">
                                     <div class=\"img-s-150 m-l-r-50\">
                                                 <img src=\"../images/genericItem.png\" class=\"img-100\" alt=\"item\">
                                                 
                                     </div>
-                                    <p class=\"w-300\">$comment;</p>
+                                    <div class=\"f-sp\">
+                                    <p class=\"w-300 f-grow\">$comment</p>
+                                    <p class=\"w-300 f-08-ir\">User: $reviewer</p>
+                                    <p class=\"w-300 f-08-ir\">Date: $rDate</p>
+                                    </div>
                         </div>
-                </div>";} ?>
+                </div>";}?>
             </div>
 </div>
 
