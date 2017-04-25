@@ -8,6 +8,6 @@
         <link href="../style.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
-	   <link href="../styleLib.css" rel="stylesheet"> 
+	    <link href="../styleLib.css" rel="stylesheet"> 
 	</head>
 	<body>

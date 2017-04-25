@@ -138,7 +138,9 @@ FONT
 	color: #ed6d22;
 }
 
-
+.txt-align-center{
+    text-align: center;
+}
 
 /***********
 FONT AWESOME ADDON STYLES
