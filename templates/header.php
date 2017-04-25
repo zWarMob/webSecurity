@@ -23,7 +23,7 @@
                 </ul>
             </div>
 		</div>
-        <div class="container">
+        <div class="login-container">
             <div id="modal" class="popupContainer" style="display:none;">
               <!-- popup header-->
               <header class="popupHeader font-s-18">
