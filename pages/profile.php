@@ -15,13 +15,26 @@ $result->bind_param('s', $user);
 $result->execute();
 $result->store_result();
 $result->bind_result($id,$user,$reviewer,$comment, $rating, $rDate);
-/*$resultCheckResult = $result->fetch();*/
 $resultCheckCount = $result->num_rows;
 
+
+
+/* fetch associative array */
+while ($row = $result->fetch_array()) {
+    //printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
+}
+
+/* free result set */
+$result->free();
+/* close connection */
+$con->close();
+
+
+
 /*
-while($result->fetch()) {
-    
-    echo $id;
+foreach($sqlResult as $test){
+            echo $rating;
+            echo $comment;
 }*/
 
     
@@ -34,14 +47,12 @@ while($result->fetch()) {
                                     <p class="">Name</p>
                                     <p class="">City</p>
                                     <p class="">Age</p>
-                                    <p class="">...</p>
-                                    <p class="">...</p>
+                                    <p class="">Avg rating</p>
                         </div>
                         <div>
                                     <p class="">Thao</p>
                                     <p class="">Copenhagen</p>
                                     <p class="">24</p>
-                                    <p class="">...</p>
                                     <p class="">...</p>
                         </div>
             </div>
@@ -80,18 +91,20 @@ while($result->fetch()) {
                                         if ($resultCheckCount == 0){
                                   echo "<h1>No reviews have been made yet</h1>";
                                         }
-                while($result->fetch()) {
+               /* while($result->fetch()) {*/
+                        foreach($rows as $value){
+               
                 
-                                    switch ($rating){
+                                    switch ($value){
                                                 case "1":
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>";
                                                 break;
                                                 case "2":
                                                 echo "
@@ -99,9 +112,9 @@ while($result->fetch()) {
                                                 <div class='f-c m-20'>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>";
                                                 break;
                                                 case "3":
                                                 echo "
@@ -110,8 +123,8 @@ while($result->fetch()) {
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>";
                                                 break;
                                                 case "4":
                                                 echo "
@@ -121,7 +134,7 @@ while($result->fetch()) {
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star fa-2x' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>";
                                                 break;
                                                 case "5":
                                                 echo "
