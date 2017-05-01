@@ -64,6 +64,10 @@ MARGIN
 PADDING
 */
 
+.p-4 {
+	padding: 4px;
+}
+
 
 /***********
 HEIGHT
@@ -159,11 +163,6 @@ FONT AWESOME ADDON STYLES
 .fa-star-o {
 	font-size: 3em!important;
 	/*color: #8c8c8c!important;*/
-}
-
-.fa {
-	font-size: 3em!important;
-	padding: 4px;
 }
 
 

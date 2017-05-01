@@ -10,21 +10,12 @@ ini_set('display_errors', 1);
 /*
 require_once 'db_connect.php';
 $user = "0001";
+$reviewer = "0666";
 
 
-$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE ?");
-$result->bind_param('s', $user);
-$result->execute();
-$result->store_result();
-$result->bind_result($id,$user,$reviewer,$comment, $rating, $rDate);
 
-$resultCheckCount = $result->num_rows;
 */
-/*
-while($result->fetch()) {
-    
-    echo $id;
-}*/
+
 
     
 ?>
@@ -33,18 +24,17 @@ while($result->fetch()) {
 <div class="f-cl-c m-20">
     <h1 class="h1-c">NEW REVIEW</h1>
             <div class="f-c m-20">
-                        <i class="fa fa-star-o ratings_stars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o ratings_stars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o ratings_stars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o ratings_stars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o ratings_stars" aria-hidden="true"></i>
+                        <i class="p-4 fa fa-star-o fa-3x ratings_stars" aria-hidden="true"></i>
+                        <i class="p-4 fa fa-star-o fa-3x ratings_stars" aria-hidden="true"></i>
+                        <i class="p-4 fa fa-star-o fa-3x ratings_stars" aria-hidden="true"></i>
+                        <i class="p-4 fa fa-star-o fa-3x ratings_stars" aria-hidden="true"></i>
+                        <i class="p-4 fa fa-star-o fa-3x ratings_stars" aria-hidden="true"></i>
             </div>
             <div class="/*w-250 h-200*/">
-                        <form>
-                                    <input type="text">
-                        </form>
+                        <textarea class="w-250 h-200" style="resize: none;"></textarea>
             </div>
             <p id="test" style="border: 2px solid red; width: 20px; height: 20px;"></p>
+            <button id="postR" class="btn btn-warning">Post</button>
 </div>
 
 <script>
@@ -87,16 +77,23 @@ while($result->fetch()) {
             var t = $('.fa-star').length;
             $('#test').html(t);
             */
+            
+            $("#postR").click(function(){
+                        
+            });
+            
          
 </script>
 
 <?php
 
 
-
 /*
-echo str_replace("{{cCONTENT}}","hello",$replace);
+$result = $con->prepare("INSERT INTO websecreviews (user,reviewer,comment,rating) VALUES (?,?,?,?)");
+$result->bind_param('ssss', $user,$reviewer,$getComment,$getRating);
+$result->execute();
 */
+
 
 include('../templates/footer.php');
 include('../templates/mEnd.php');
