@@ -32,6 +32,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 #content{
+  margin-bottom:30px;
     flex: 1;
 }
 
@@ -527,4 +528,23 @@ footer .socialMedia .item img{
     cursor: pointer;
     background: #ED6D22;
     color: white !important
+}
+/* Highlight the "current" day */
+.calendar .days li .picked {
+    background: #03A9F4;
+}
+
+.productConfirmation .dotsExtended{
+  right:0;
+}
+
+.productConfirmation .line{
+  position:relative;
+  overflow: hidden;
+}
+.productConfirmation .total{
+  float:right;
+  margin:5px;
+  margin-right:20px;
+  width:150px;
 }

@@ -44,7 +44,7 @@ include('../templates/header.php');
     <li>13</li>
     <li><span class="free">14</span></li>
     <li><span class="free">15</span></li>
-    <li><span class="free">16</span></li>
+    <li><span class="free picked">16</span></li>
     <li><span class="free">17</span></li>
     <li>18</li>
     <li>19</li>
@@ -62,16 +62,25 @@ include('../templates/header.php');
     <li>31</li>
   </ul>
 </div>
-<div class="w-250 m-r-20 bg-dbdbdb">
-  products:<br>
-  1 x drill 200w bosh<br>
-<br>
-  1 day x 20$ <br>
-  -----------<br>
-  price 20$<br>
-  +20% VAT 24$<br>
-total 24$<br>
-                      <button class="w-100 m-t-10 fs-20px btn btn-success">Book</button>
+<div class="productConfirmation w-250 m-r-20 bg-dbdbdb">
+  <br>
+  <div class="line m-l-15 fw-bold fs-16px">products:</div>
+  <div class="line m-r-20 m-l-15">
+    <span class="pos-rel bg-dbdbdb zi-1">1 day (drill 200w bosh)</span>
+    <span class="fl-r pos-rel bg-dbdbdb zi-1"> <span class="fw-bold">x</span> 20$</span>
+    <span class="dotsExtended pos-abs zi-0">....................................</span>
+  </div>
+  <br><br>
+  <div class="line m-r-20 m-l-15">.
+    <span class="dotsExtended pos-abs zi-0">---------------------------------------------------------</span>
+  </div>
+  <br>
+  <div class="total">
+    Price : <span class="fl-r">20$</span><br>
+    +20% VAT : <span class="fl-r">4$</span><br>
+    TOTAL : <span class="fl-r">24$</span> 
+  </div>
+  <button class="fl-r m-r-20 w-100 m-t-10 fs-20px btn btn-success">Book</button>
 </div>
 <div class="product w-600">
   <div class="item clearfix bg-dbdbdb p-10">

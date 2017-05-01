@@ -76,6 +76,9 @@ MARGIN
 	margin: 30px;
 }
 
+.m-l-15{
+	margin-left:15px;
+}
 
 .m-t-10{
 	margin-top:10px;
@@ -274,6 +277,16 @@ CLEARFIX for floated elements
    clear: both;
 }	
 
+/***********
+POSITION
+*/
+
+.pos-rel{
+	position:relative;
+}
+.pos-abs{
+	position:absolute;
+}
 
 
 /*********
@@ -282,4 +295,18 @@ LISTs
 
 .ul-noDeco{
 	list-style-type: none;
+}
+
+/***********
+z-Index
+*/
+
+.zi-0{
+	z-index: 0;
+}
+.zi-1{
+	z-index: 1;
+}
+.zi-2{
+	z-index: 2;
 }
