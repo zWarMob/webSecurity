@@ -1,6 +1,6 @@
 
         <div class="navbar">
-            <a id="logo" href="#">
+            <a id="logo" href="index.php">
                 <img src="../images/logo.jpg" alt="">
             </a>
             <div class="inner">
@@ -11,9 +11,9 @@
             </div>
             <div id="links">
                 <ul>
-                  <li><a>Home</a></li>
+                  <li><a href="index.php">Home</a></li>
                   <li><a>Messages</a></li>
-                  <li><a>FAQ</a></li>
+                  <li><a href="faq.php">FAQ</a></li>
                   <li id="login"><a id="modal_trigger" href="#modal"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Login</a></li>
                   <li><a><div class="color-white" id="status"></a></li>
                   <li><a><div class="color-white" id="name"></div></a></li>
