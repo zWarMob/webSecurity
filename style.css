@@ -441,3 +441,11 @@ footer .socialMedia .item img{
         transform: rotate(90deg);
         color: #454444;
     }
+
+    /*************************************************
+    PRODUCTS
+    */
+     
+    #products .filter input{
+        line-height: inherit;
+    }
