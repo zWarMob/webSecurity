@@ -38,6 +38,18 @@ BORDER
 }
 
 /***********
+FLOAT
+*/
+
+.fl-l{
+	float:left;
+}
+
+.fl-r{
+	float:right;
+}
+
+/***********
 MARGIN
 */
 
