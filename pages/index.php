@@ -10,6 +10,14 @@ include('../templates/header.php');
 
 	<div id="products" class="m-t-10">
 		<div class="filter b-2 p-10 w-200 fl-l m-r-20">
+			<h2 class="m-0 m-t-10">Date from</h2>
+			<ul class="p-0 m-0 ul-noDeco">
+				<li><input class="second-child" type="date" name="to"></li>
+			</ul>
+			<h2 class="m-0 m-t-10">Date to</h2>
+			<ul class="p-0 m-0 ul-noDeco">
+				<li><input class="second-child" type="date" name="to"></li>
+			</ul>
 			<h2 class="m-0 m-t-10">Categories</h2>
 			<ul class="p-0 m-0 ul-noDeco">
 				<li><input type="checkbox" name="vehicle" value="Car">Vehicles</li>
