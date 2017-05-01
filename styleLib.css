@@ -111,11 +111,24 @@ IMAGES
 	width: 100%;
 }
 
+.img-s-20{
+	width:20px;
+	height:20px;
+}
+
+.img-s-75{
+	width:75px;
+	height:75px;
+}
+
 .img-s-150 {
 	height: 150px;
 	width: 150px;
 }
 
+.img-max-300{
+	max-width: 300px;
+}
 
 /***********
 HR
