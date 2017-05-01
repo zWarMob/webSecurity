@@ -87,7 +87,7 @@ while($result->fetch()) {
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
@@ -97,8 +97,8 @@ while($result->fetch()) {
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>";
@@ -107,9 +107,9 @@ while($result->fetch()) {
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>";
                                                 break;
@@ -117,31 +117,31 @@ while($result->fetch()) {
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
                                                 <i class='fa fa-star-o' aria-hidden='true'></i>";
                                                 break;
                                                 case "5":
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>
-                                                <i class='fa fa-star fa-2' aria-hidden='true'></i>";
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star fa-2x' aria-hidden='true'></i>";
                                                 break;
                                                 default:
                                                 echo "
                                                 <div class='b-2 m-30'>
                                                 <div class='f-c m-20'>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>
-                                                <i class='fa fa-star-o' aria-hidden='true'></i>";
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>
+                                                <i class='fa fa-star-o fa-2x' aria-hidden='true'></i>";
                                                 
                                     }
 

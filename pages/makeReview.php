@@ -11,9 +11,7 @@ ini_set('display_errors', 1);
 require_once 'db_connect.php';
 $user = "0001";
 $reviewer = "0666";
-
 */
-
 
     
 ?>
@@ -31,7 +29,7 @@ $reviewer = "0666";
             <div class="/*w-250 h-200*/">
                         <textarea id="commentField" class="w-250 h-200" style="resize: none;"></textarea>
             </div>
-            <p id="test" style="border: 2px solid red; width: 20px; height: 20px;"></p>
+
             <button id="postR" class="btn btn-warning">Post</button>
 </div>
 
@@ -64,9 +62,9 @@ $reviewer = "0666";
                         $(this).nextAll().removeClass('fa-star-selected');
                         $(this).nextAll().addClass('fa-star-o');  
 
-                        var t = $('.fa-star').length;
+                       /* var t = $('.fa-star').length;
                         $('#test').html(t);
-                        console.log(t);
+                        console.log(t);*/
             });
             
             /*
@@ -78,7 +76,7 @@ $("#postR").click(function(){
             var comment = $("#commentField").val();
             var rating = $('.fa-star').length;
 
-            var sLink = "makeReview2.php?comment=" + comment + "&rating=" + rating;
+            var sLink = "makeReviewApi.php?comment=" + comment + "&rating=" + rating;
             
             $.ajax({
                         "url":sLink,
@@ -89,11 +87,11 @@ $("#postR").click(function(){
                         console.log(Data);
                         
                         if (Data == "yes") {
-                                    //code
+                                    swal("Good job!", "You clicked the button!", "success")
                         }else{
                                     swal({
                                     title: "Error!",
-                                    text: "Here's my error message!",
+                                    text: "Please enter something",
                                     type: "error",
                                     confirmButtonText: "Cool"
                                   });
