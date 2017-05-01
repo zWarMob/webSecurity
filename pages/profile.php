@@ -10,7 +10,7 @@ ini_set('display_errors', 1);
 require_once 'db_connect.php';
 $user = "0001";
 
-$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE ?");
+$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE ? ORDER BY reviewTime DESC");
 $result->bind_param('s', $user);
 $result->execute();
 $result->store_result();

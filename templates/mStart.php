@@ -10,5 +10,9 @@
 		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
 		<link href="../styleLib.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+		
 	</head>
 	<body>

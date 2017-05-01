@@ -86,7 +86,18 @@ $("#postR").click(function(){
                         "method":"post",
                         "cache": false
                     }).done( function(Data){
+                        console.log(Data);
                         
+                        if (Data == "yes") {
+                                    //code
+                        }else{
+                                    swal({
+                                    title: "Error!",
+                                    text: "Here's my error message!",
+                                    type: "error",
+                                    confirmButtonText: "Cool"
+                                  });
+                        }
             });
 });
             
