@@ -23,6 +23,12 @@ FLEX
 	justify-content: space-between;
 }
 
+.f-row{
+	display:flex;
+	flex-direction: row;
+}
+
+
 .f-grow {
 	flex-grow: 1;
 }
@@ -38,14 +44,24 @@ BORDER
 }
 
 /***********
+FLOAT
+*/
+
+.fl-l{
+	float:left;
+}
+
+.fl-r{
+	float:right;
+}
+
+/***********
 MARGIN
 */
 
-
-.m-t-10{
-	margin-top:10px;
+.m-0{
+	margin:0px;
 }
-
 .m-20 {
 	margin: 20px;
 }
@@ -54,6 +70,18 @@ MARGIN
 	margin: 30px;
 }
 
+
+.m-t-10{
+	margin-top:10px;
+}
+
+.m-t-20{
+	margin-top:20px;
+} 
+
+.m-r-20{
+	margin-right:20px;
+}
 
 .m-l-r-50 {
 	margin: 0px 50px;
@@ -64,10 +92,20 @@ MARGIN
 PADDING
 */
 
+<<<<<<< HEAD
 .p-4 {
 	padding: 4px;
 }
 
+=======
+.p-0{
+	padding:0px;
+}
+
+.p-10{
+	padding:10px;
+}
+>>>>>>> origin/master
 
 /***********
 HEIGHT
@@ -87,12 +125,23 @@ HEIGHT
 /***********
 WIDTH
 */
+.w-200 {
+	width:200px;
+}
+
 .w-250 {
 	width: 250px;
 }
 
 .w-300 {
 	width: 300px;
+}
+.w-600{
+	width:600px;
+}
+
+.w-p-100{
+	width:100%;
 }
 
 /***********
@@ -103,11 +152,24 @@ IMAGES
 	width: 100%;
 }
 
+.img-s-20{
+	width:20px;
+	height:20px;
+}
+
+.img-s-75{
+	width:75px;
+	height:75px;
+}
+
 .img-s-150 {
 	height: 150px;
 	width: 150px;
 }
 
+.img-max-300{
+	max-width: 300px;
+}
 
 /***********
 HR
@@ -146,6 +208,14 @@ FONT
     text-align: center;
 }
 
+.fw-bold{
+	font-weight: bold;
+}
+
+.fw-normal{
+	font-weight: normal;
+}
+
 /***********
 FONT AWESOME ADDON STYLES
 */
@@ -166,3 +236,31 @@ FONT AWESOME ADDON STYLES
 }
 
 
+
+
+/********
+BACKGROUDN COLOR
+*/
+.bg-dbdbdb{
+	background-color:#dbdbdb;
+}
+
+/*******
+CLEARFIX for floated elements
+*/
+.clearfix::after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}	
+
+
+
+/*********
+LISTs
+*/
+
+.ul-noDeco{
+	list-style-type: none;
+}

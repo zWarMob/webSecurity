@@ -1,5 +1,6 @@
 {
-  "require" : {
-    "facebook/graph-sdk" : "~5.0"
-  }
+    "require": {
+        "monolog/monolog": "1.0.*",
+    	"facebook/graph-sdk" : "~5.0"
+    }
 }
