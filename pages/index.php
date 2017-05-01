@@ -86,123 +86,75 @@ include('../templates/header.php');
 					</div>
 				</div>
 				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
+					<div class="itemSpec w-300 fl-l m-r-20">
+						<img class="img-max-300" src="https://upload.wikimedia.org/wikipedia/commons/8/88/LargeDrill.jpg">
+						<div>
+							<h2 class="fl-l fs-24px">drill 200w bosh</h2>
+							<h2 class="fl-r fs-24px fw-normal"><span class="">20$</span>/day</h2>
+						</div>
+						<h3 class="fs-16px fw-bold">Højskolevej 26, København NV 2400 <i class='fa fa-map-marker' aria-hidden='true'></i></h3>
+						<div>The drill is bla bla bla, very good, lorem ipsum dolorem sit wwwwwwwwwwwwwwwwwwwww</div>
 					</div>
-					<div class="personSpec fl-l">
+					<div class="personSpec fl-l f-cl-c">
 						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
+						<div class="personName">
+							<h3 class="fl-l">Petyo Zhechev</h3>
+							<img class="img-s-20 fl-l" src="http://www.gabbatracklistworld.com/img/online.png">	
+						</div>
+						<div class='f-c m-0'>
+	                        <i class='fa fa-star fa-2 fa-star2' aria-hidden='true'></i>
+	                        <i class='fa fa-star fa-star2 fa-2' aria-hidden='true'></i>
+	                        <i class='fa fa-star fa-star2 fa-2' aria-hidden='true'></i>
+	                        <i class='fa fa-star fa-star2 fa-2' aria-hidden='true'></i>
+	                        <i class='fa fa-star-o fa-star-o2' aria-hidden='true'></i>
+	                    </div>
+	                    <div class="fbConfirmed">
+	                        <i class='fa fa-check-square-o' aria-hidden='true'></i>Facebook godkendt
+	                    </div>
+	                    <div class="phoneConfirmed">
+	                        <i class='fa fa-check-square-o' aria-hidden='true'></i>Mobilnr. verificeret
+	                    </div>
+	                    <div>
+	                    	Tlf. og e-mail vises <br>efter bekræftet booking.
+	                    </div>
+	                    <button class="w-100 m-t-10 fs-20px btn btn-success">Book</button>
+
 					</div>
 				</div>
 				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
+					<div class="itemSpec w-300 fl-l m-r-20">
+						<img class="img-max-300" src="https://upload.wikimedia.org/wikipedia/commons/8/88/LargeDrill.jpg">
+						<div>
+							<h2 class="fl-l fs-24px">drill 200w bosh</h2>
+							<h2 class="fl-r fs-24px fw-normal"><span class="">20$</span>/day</h2>
+						</div>
+						<h3 class="fs-16px fw-bold">Højskolevej 26, København NV 2400 <i class='fa fa-map-marker' aria-hidden='true'></i></h3>
+						<div>The drill is bla bla bla, very good, lorem ipsum dolorem sit wwwwwwwwwwwwwwwwwwwww</div>
 					</div>
-					<div class="personSpec fl-l">
+					<div class="personSpec fl-l f-cl-c">
 						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
-					</div>
-				</div>
-				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
-					<div class="itemSpec fl-l m-r-20">
-						<img src="images/x.png">
-						<h2>drill 200w bosh</h2>
-						<h3>Højskolevej 26</h3>
-					</div>
-					<div class="personSpec fl-l">
-						<img class="img-s-75" src="https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png">
-						<h3>Name</h3>
-						<img class="" src="http://www.gabbatracklistworld.com/img/online.png">	
+						<div class="personName">
+							<h3 class="fl-l">Petyo Zhechev</h3>
+							<img class="img-s-20 fl-l" src="http://www.gabbatracklistworld.com/img/online.png">	
+						</div>
+						<div class='f-c m-0'>
+	                        <i class='fa fa-star fa-2 fa-star2' aria-hidden='true'></i>
+	                        <i class='fa fa-star fa-star2 fa-2' aria-hidden='true'></i>
+	                        <i class='fa fa-star fa-star2 fa-2' aria-hidden='true'></i>
+	                        <i class='fa fa-star fa-star2 fa-2' aria-hidden='true'></i>
+	                        <i class='fa fa-star-o fa-star-o2' aria-hidden='true'></i>
+	                    </div>
+	                    <div class="fbConfirmed">
+	                        <i class='fa fa-check-square-o' aria-hidden='true'></i>Facebook godkendt
+	                    </div>
+	                    <div class="phoneConfirmed">
+	                        <i class='fa fa-check-square-o' aria-hidden='true'></i>Mobilnr. verificeret
+	                    </div>
+	                    <div>
+	                    	Tlf. og e-mail vises <br>efter bekræftet booking.
+	                    </div>
+	                    <button class="w-100 m-t-10 fs-20px btn btn-success">Book</button>
+
 					</div>
 				</div>
 				<div class="item clearfix bg-dbdbdb p-10 m-t-10">
