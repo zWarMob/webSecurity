@@ -191,10 +191,6 @@ FONT
 	text-align: right;
 }
 
-.f-w-600 {
-	font-weight: 600;
-}
-
 .h1-c {
 	font-family: 'icomoon';
 	color: #ed6d22;
@@ -206,6 +202,19 @@ FONT
 
 .txt-align-center{
     text-align: center;
+}
+
+.fs-21px{
+	font-size:21px;
+}
+
+.fs-24px{
+	font-size:24px;
+}
+
+
+.f-w-600 {
+	font-weight: 600;
 }
 
 .fw-bold{

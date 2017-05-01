@@ -53,10 +53,10 @@ include('../templates/header.php');
 					<div class="itemSpec w-300 fl-l m-r-20">
 						<img class="img-max-300" src="https://upload.wikimedia.org/wikipedia/commons/8/88/LargeDrill.jpg">
 						<div>
-							<h2 class="fl-l">drill 200w bosh</h2>
-							<h2 class="fl-r fw-normal"><span class="fw-bold">20$</span>/day</h2>
+							<h2 class="fl-l fs-24px">drill 200w bosh</h2>
+							<h2 class="fl-r fs-24px fw-normal"><span class="fw-bold">20$</span>/day</h2>
 						</div>
-						<h3>Højskolevej 26</h3>
+						<h3 class="fs-21px">Højskolevej 26</h3>
 						<div>The drill is bla bla bla, very good, lorem ipsum dolorem sit wwwwwwwwwwwwwwwwwwwww</div>
 					</div>
 					<div class="personSpec fl-l f-cl-c">
