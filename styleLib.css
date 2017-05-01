@@ -145,18 +145,24 @@ FONT
 /***********
 FONT AWESOME ADDON STYLES
 */
+
+.fa-star-selected {
+	color: #ed6d22!important;
+	text-shadow: 0px 0px 15px #fbff00;
+}
+
 .fa-star {
-	font-size: 3em!important;
 	color: #ed6d22!important;
 	text-shadow: 0px 0px 15px #fbff00;
 }
 
 .fa-star-o {
 	font-size: 3em!important;
-	color: #8c8c8c!important;
+	/*color: #8c8c8c!important;*/
 }
 
 .fa {
+	font-size: 3em!important;
 	padding: 4px;
 }
 
