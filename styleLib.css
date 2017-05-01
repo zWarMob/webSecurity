@@ -125,6 +125,10 @@ HEIGHT
 /***********
 WIDTH
 */
+.w-100{
+	width:100px;
+}
+
 .w-200 {
 	width:200px;
 }
@@ -204,8 +208,12 @@ FONT
     text-align: center;
 }
 
-.fs-21px{
-	font-size:21px;
+.fs-16px{
+	font-size:16px;
+}
+
+.fs-20px{
+	font-size:20px;
 }
 
 .fs-24px{
