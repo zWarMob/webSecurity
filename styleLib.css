@@ -17,6 +17,12 @@ FLEX
 	align-items: center;
 }
 
+.f-row-c {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 .f-sp {
 	display: flex;
 	flex-direction: column;
@@ -92,12 +98,10 @@ MARGIN
 PADDING
 */
 
-<<<<<<< HEAD
 .p-4 {
 	padding: 4px;
 }
 
-=======
 .p-0{
 	padding:0px;
 }
@@ -105,7 +109,6 @@ PADDING
 .p-10{
 	padding:10px;
 }
->>>>>>> origin/master
 
 /***********
 HEIGHT

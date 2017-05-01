@@ -445,7 +445,86 @@ footer .socialMedia .item img{
     /*************************************************
     PRODUCTS
     */
-     
+
     #products .filter input{
         line-height: inherit;
     }
+
+    /****************************
+    CALENDAR STYLES
+    */
+.calendar {width:207px;padding:4px;background-color:#ededed;}
+    .calendar ul {list-style-type: none;}
+
+
+/* Month header */
+.calendar .month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #ED6D22;
+}
+
+/* Month list */
+.calendar .month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.calendar .month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.calendar .month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.calendar .month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.calendar .weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.calendar .weekdays li {
+    display: inline-block;
+    width: 25px;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.calendar .days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.calendar .days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color:rgb(187, 187, 187);
+}
+
+/* Highlight the "current" day */
+.calendar .days li .free {
+    padding: 5px;
+    margin: -5px;
+    cursor: pointer;
+    background: #ED6D22;
+    color: white !important
+}
