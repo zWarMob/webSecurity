@@ -12,8 +12,6 @@ require_once 'db_connect.php';
 $user = "0001";
 $reviewer = "0666";
 
-
-
 */
 
 
@@ -31,7 +29,7 @@ $reviewer = "0666";
                         <i class="p-4 fa fa-star-o fa-3x ratings_stars" aria-hidden="true"></i>
             </div>
             <div class="/*w-250 h-200*/">
-                        <textarea class="w-250 h-200" style="resize: none;"></textarea>
+                        <textarea id="commentField" class="w-250 h-200" style="resize: none;"></textarea>
             </div>
             <p id="test" style="border: 2px solid red; width: 20px; height: 20px;"></p>
             <button id="postR" class="btn btn-warning">Post</button>
@@ -44,7 +42,6 @@ $reviewer = "0666";
                         if (!$(this).hasClass("fa-star")) {
                                    $(this).prevAll().addBack().addClass('fa-star-selected');
                         }
-               // $(this).prevAll().addBack().removeClass('fa-star-o');
             },
             // Handles the mouseout
             function() {
@@ -56,7 +53,6 @@ $reviewer = "0666";
                                     
              
                 $(this).prevAll().addBack().removeClass('fa-star-selected');
-                //$("i").removeClass('fa-star-selected');
                 }
             }
         );
@@ -78,9 +74,21 @@ $reviewer = "0666";
             $('#test').html(t);
             */
             
-            $("#postR").click(function(){
+$("#postR").click(function(){
+            var comment = $("#commentField").val();
+            var rating = $('.fa-star').length;
+
+            var sLink = "makeReview2.php?comment=" + comment + "&rating=" + rating;
+            
+            $.ajax({
+                        "url":sLink,
+                        "dataType":"text",
+                        "method":"post",
+                        "cache": false
+                    }).done( function(Data){
                         
             });
+});
             
          
 </script>

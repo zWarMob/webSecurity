@@ -24,7 +24,6 @@ while($result->fetch()) {
     echo $id;
 }*/
 
-printf ($resultCheckCount);
     
 ?>
 
