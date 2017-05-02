@@ -2,32 +2,43 @@
 
 include('../templates/mStart.php');
 include('../templates/header.php');
-/*
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-*/
+
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+
 //GET THE DB CONNECTION DETAILS
 require_once 'db_connect.php';
 $user = "0001";
 
-$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE ? ORDER BY reviewTime DESC");
-$result->bind_param('s', $user);
+$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE :user ORDER BY reviewTime DESC");
+$result->bindParam(':user', $user);
 $result->execute();
-$result->store_result();
+$result = $result->fetchAll();
+$resultCount = count($result);
+// print_r($result);
+// echo '<br>';
+//                         foreach ($result as $key => $value) {
+// print_r($key);
+// echo '<br>';
+// print_r($value);
+// echo '<br>';
+// }
+ /*
 $result->bind_result($id,$user,$reviewer,$comment, $rating, $rDate);
-$resultCheckCount = $result->num_rows;
+$resultCheckCount = $result->num_rows;*/
 
+/*$result->get_result();
+var_dump($result);*/
 
 
 /* fetch associative array */
-while ($row = $result->fetch_array()) {
+/*while ($row = $result->fetch_array()) {
     //printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
-}
+}*/
 
-/* free result set */
-$result->free();
-/* close connection */
-$con->close();
+        
+
+
 
 
 
@@ -88,11 +99,33 @@ foreach($sqlResult as $test){
                 <h1 class="h1-c">HISTORY</h1>
                 <!-- TEMPLATE !!! -->
                 <?php
-                                        if ($resultCheckCount == 0){
-                                  echo "<h1>No reviews have been made yet</h1>";
-                                        }
+
+
+                    if ($resultCount == 0){
+                        echo "<h1>No reviews have been made yet</h1>";
+                    }else{
+                        foreach ($result as $key => $value) {
+                            echo "
+                                <div class='b-2 m-30'>
+                                    <div class='f-c m-20'>"
+                                        .str_repeat("<i class='fa fa-star fa-2x' aria-hidden='true'></i>",$value['rating'])
+                                        .str_repeat("<i class='fa fa-star-o fa-2x' aria-hidden='true'></i>",(5-$value['rating']))
+                                    ."</div>
+                                    <div class='h-100 f-c m-20'>
+                                        <div class='img-s-150 m-l-r-50'>
+                                            <img src='../images/genericItem.png' class='img-100' alt='item'>
+                                        </div>
+                                        <div class='f-sp'>
+                                            <p class='w-300 f-grow'>".$value['comment']."</p>
+                                            <p class='w-300 f-08-ir'>User: ".$value['reviewer']."</p>
+                                            <p class='w-300 f-08-ir'>Date: ".$value['reviewTime']."</p>
+                                        </div>
+                                    </div>
+                                </div>";
+                        }
+                    }
                /* while($result->fetch()) {*/
-                        foreach($rows as $value){
+            /*            foreach($rows as $value){
                
                 
                                     switch ($value){
@@ -172,7 +205,7 @@ foreach($sqlResult as $test){
                                     <p class=\"w-300 f-08-ir\">Date: $rDate</p>
                                     </div>
                         </div>
-                </div>";}?>
+                </div>";}*/?>
             </div>
 </div>
 
