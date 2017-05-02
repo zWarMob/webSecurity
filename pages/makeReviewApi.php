@@ -23,6 +23,6 @@ echo ("yes");
 }
 
 
-mysqli_close($con);
+$con = null;
 
 ?>

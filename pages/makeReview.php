@@ -87,7 +87,7 @@ $("#postR").click(function(){
                         console.log(Data);
                         
                         if (Data == "yes") {
-                                    swal("Good job!", "You clicked the button!", "success")
+                                    swal("Good job!", "You made a review!", "success")
                         }else{
                                     swal({
                                     title: "Error!",

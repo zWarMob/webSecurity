@@ -64,7 +64,14 @@ foreach($sqlResult as $test){
                                     <p class="">Thao</p>
                                     <p class="">Copenhagen</p>
                                     <p class="">24</p>
-                                    <p class="">...</p>
+                                    <p class="" style="font-weight: 600;"><?php
+                                    $avg = 0;
+                                    foreach ($result as $key => $value) {
+                                                $avg += $value['rating'];
+                                    }
+                                    $final = $avg / $resultCount;
+                                    echo (round($final,1));
+                                    ?> <i class='fa fa-star fa-1x aria-hidden='true'></i></p>
                         </div>
             </div>
             <div class="img-s-150 m-l-r-50">
