@@ -8,8 +8,11 @@ $getComment = $_GET['comment'];
 $getRating = $_GET['rating'];
 
 if($getComment != "" && $getRating != "" && $getRating <= "5" && $getRating >= "1"){
-$result = $con->prepare("INSERT INTO websecreviews (user,reviewer,comment,rating) VALUES (?,?,?,?)");
-$result->bind_param('ssss', $user,$reviewer,$getComment,$getRating);
+$result = $con->prepare("INSERT INTO websecreviews (user,reviewer,comment,rating) VALUES (:user,:reviewer,:comment,:rating)");
+$result->bindParam(':user',$user);
+$result->bindParam(':reviewer',$reviewer);
+$result->bindParam(':comment',$getComment);
+$result->bindParam(':rating',$getRating);
 $result->execute();
 
 echo ("yes");
@@ -20,6 +23,6 @@ echo ("yes");
 }
 
 
-mysqli_close($con);
+$con = null;
 
 ?>
