@@ -68,10 +68,14 @@
     //$ipLockoutCheckResult = $ipLockoutCheck->fetch();
     //$ipLockoutCheckCount = $ipLockoutCheck->num_rows;
     $ipLockoutCheckResult = $ipLockoutCheck->fetchAll();
-    
     $ipLockoutCheckCount = $ipLockoutCheck->rowCount();
+    
     //IF THE IP EXISTS THEN ASSIGN 1 TO THE BAN VARIABLE FOR USE FURTHER DOWN THIS CODE
-       if(!empty($lockIp) && $triedUsername == $sUser && $siteBan == 0){
+    /*   if(!empty($lockIp) && $triedUsername == $sUser && $siteBan == 0){
+        $errors['attempts'] = 'User currently locked from this ip';
+        $ban = 1;
+    }*/
+    if(!empty($lockIp) && $triedUsername == $sUser && $siteBan == 0){
         $errors['attempts'] = 'User currently locked from this ip';
         $ban = 1;
     }
@@ -137,17 +141,41 @@
         $lookSet->bindParam('sss',$ip,$ip,$sUser);
         $lookSet->execute();
     }*/
-    print_r ($ipCheckResult);
     
-    foreach ($ipCheckResult as $key => $value) {
-        print_r ($value['username']);
-    }
+    //print_r ($ipCheckResult);
+
     
-    if($ipCheckCount == 1 && $ipCheckResult['username'] == $sUser && $ban == 0 && $siteBan == 0){
+$needle = $sUser;
+$haystack = $ipCheckResult;
+
+function search_array($needle, $haystack) {
+     if(in_array($needle, $haystack)) {
+          return true;
+     }
+     foreach($haystack as $element) {
+          if(is_array($element) && search_array($needle, $element))
+               return true;
+     }
+   return false;
+}
+//CHECKING RESULT FROM ABOVE
+/*
+if(!search_array($sUser, $ipCheckResult)) {
+     // do something if the given value does not exist in the array
+    print_r("NOT FOUND");
+}else{
+    print_r("FOUND"); 
+}
+*/
+
+    //print_r(array_key_exists($sUser, $ipCheckResult['username'][2]));
+    
+    
+    if($ipCheckCount == 1 && search_array($sUser, $ipCheckResult) && $ban == 0 && $siteBan == 0){
         $errors['attempts'] = 'Incorrect login. <br>Your are allowed 4 more attempts within 10 minutes';
-    } elseif ($ipCheckCount > 1 && $ipCheckCount < 5 && $ipCheckResult['username'] == $sUser && $ban == 0 && $siteBan == 0){
+    } elseif ($ipCheckCount > 1 && $ipCheckCount < 5 && search_array($sUser, $ipCheckResult) && $ban == 0 && $siteBan == 0){
         $errors['attempts'] = 'Incorrect login';
-    } elseif ($ipCheckCount == 5 && $ipCheckResult['username'] == $sUser && $ban == 0 && $siteBan == 0){
+    } elseif ($ipCheckCount == 5 && search_array($sUser, $ipCheckResult) && $ban == 0 && $siteBan == 0){
         //BAN IP IF THE NUMBER OF TRIES (ROWS RETURNED FROM THE SQL) IS 5
         $errors['attempts'] = 'Your are now banned for 5 minutes';
         $lookSet = $con->prepare("INSERT INTO websecip (address,lockout,username,timestamp)VALUES(?,?,?,CURRENT_TIMESTAMP)");
@@ -158,17 +186,19 @@
     
     
     //IF IP TRIES 10 DIFFERENT USERNAMES WITHIN 5 MIN BAN COMPLETELY FOR 20 MIN (20 MIN BAN IS DEFINED FURTHER UP IN THIS DOCUMENT)
-    $distinctCheck = $con->prepare("SELECT DISTINCT username FROM websecip WHERE address LIKE ? AND timestamp > (now() - interval 5 minute)");
+    $distinctCheck = $con->prepare("SELECT DISTINCT username FROM websecip WHERE address LIKE :ip AND timestamp > (now() - interval 5 minute)");
     // $distinctCheck->bind_param('s', $ip);
-    $distinctCheck->bindParam('s', $ip);
+    $distinctCheck->bindParam(':ip', $ip);
     $distinctCheck->execute();
-    $distinctCheck->store_result();
-    $distinctCheck->bind_result($loggedUsername);
-    $distinctCheckResult = $distinctCheck->fetch();
-    $distinctCheckCount = $distinctCheck->num_rows;
+    //$distinctCheck->store_result();
+    //$distinctCheck->bind_result($loggedUsername);
+    //$distinctCheckResult = $distinctCheck->fetch();
+    //$distinctCheckCount = $distinctCheck->num_rows;
+    $distinctCheckResult = $distinctCheck->fetchAll();
+    $distinctCheckResult = $distinctCheck->rowCount();
     
     //IF THERE IS FOUND 10 DIFFERENT (DISTINCT) USERNAME TRIES FROM THE SAME IP
-    if($distinctCheckCount == 10 && $ban == 0 && $siteBan == 0){
+    if($distinctCheckResult == 10 && $ban == 0 && $siteBan == 0){
         $errors['attempts'] = 'You tried to many different usernames. Your temporarily banned';
         //BAN IP
         $lookSet = $con->prepare("INSERT INTO websecip (address,lockout,sitelock,username,timestamp)VALUES(?,?,?,?,CURRENT_TIMESTAMP)");
@@ -184,7 +214,6 @@
         echo json_encode($errors);
     }
     
-    
     //CLOSE THE CONNECTION
-    $con->close();
+    $con = null;
 ?>

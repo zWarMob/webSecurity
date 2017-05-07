@@ -142,7 +142,7 @@ $("#btn-admin-login").click(function(){
           $("#LoginLabel").html(result.attempts);
           //sweetAlert("Sorry", "Gæt igen", "error");
        }
-       console.log(Data);
+       console.log("LOG DATA" +Data);
      })
    }
   });
