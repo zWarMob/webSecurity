@@ -310,3 +310,12 @@ z-Index
 .zi-2{
 	z-index: 2;
 }
+
+/***********
+LOGIN STYLING
+*/
+
+.errorLabel {
+  text-align: center;
+  color: red;
+}

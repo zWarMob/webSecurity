@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
         <div class="navbar">
             <a id="logo" href="index.php">
                 <img src="../images/logo.jpg" alt="">
@@ -58,9 +60,11 @@
                   <form>
                     <label>Email</label>
                     <input id="txt-email" type="email" placeholder="email"/>
+		    <h5 id="errorLabelUser" class="errorLabel"></h5>
                     <br />
                     <label>Password</label>
                     <input id="txt-password" type="password" placeholder="password" />
+		    <h5 id="errorLabelPass" class="errorLabel"></h5>
                     <br />
                     <div class="checkbox">
                         <label><input type="checkbox" value="remember-me" id="remember-me" >Remember me</label>
@@ -98,3 +102,48 @@
       <!-- /.popup body -->
     </div>
         </div>
+	
+<script>
+$("#btn-admin-login").click(function(){
+    
+   var sLoginUser = $("#txt-email").val();
+   var sLoginPass = $("#txt-password").val();
+   var sLink = "validate-login.php?user=" + sLoginUser + "&pass=" + sLoginPass;
+   
+   if ( sLoginUser == "") {
+      $("#errorLabelUser").html("");
+      $("#errorLabelUser").html("Please fill out the field");
+   }else if( sLoginUser != "" ){
+      $("#errorLabelUser").html("");
+   }
+    
+  if ( sLoginPass == "") {
+      $("#errorLabelPass").html("");
+      $("#errorLabelPass").html("Please fill out the field");
+   } else if( sLoginPass != "" ){
+      $("#errorLabelPass").html("");
+   }
+   
+   
+   if ( sLoginUser !== "" && sLoginPass !== "" ) {
+    
+   $.ajax({
+     "url":sLink,
+     "dataType":"text",
+     "method":"post",
+     "cache": false
+     }).done( function(Data){
+       if (Data == "loginpass") {
+          window.location.href = "approved.php";
+       }else{
+          var result = JSON.parse(Data);
+          //sweetAlert(result.attempts);
+          $("#LoginLabel").html("");
+          $("#LoginLabel").html(result.attempts);
+          //sweetAlert("Sorry", "Gæt igen", "error");
+       }
+       console.log(Data);
+     })
+   }
+  });
+</script>
