@@ -16,8 +16,17 @@
                   <li><a>Home</a></li>
                   <li><a>Messages</a></li>
                   <li><a>FAQ</a></li>
-                  <li id="login"><a id="modal_trigger" href="#modal"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span>Login</a></li>
-                  <li><a><div class="color-white" id="status"></a></li>
+		  <?php
+		   if(!isset($_SESSION['userSession']))
+		    {
+			echo "<li id='login'><a id='modal_trigger' href='#modal'><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>Login</a></li>";
+		    }else{
+			echo "<li id='logout'><a id='modal_trigger' href='#modal'><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>Log out</a></li>
+			<li><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>".$_SESSION['userSession']."</a></li>";
+		    }
+		  ?>
+		  
+		  <li><a><div class="color-white" id="status"></a></li>
                   <li><a><div class="color-white" id="name"></div></a></li>
                   <li onclick="signOut();" id="signout" ><a><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Logout</a></li>
                   <li onclick="logout();" id="logout" ><a><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Logout</a></li>
@@ -66,6 +75,7 @@
                     <input id="txt-password" type="password" placeholder="password" />
 		    <h5 id="errorLabelPass" class="errorLabel"></h5>
                     <br />
+		    <h5 id="LoginLabel" class="errorLabel bottomLabel"></h5>
                     <div class="checkbox">
                         <label><input type="checkbox" value="remember-me" id="remember-me" >Remember me</label>
                     </div>
@@ -79,14 +89,14 @@
                 <!-- Register Form -->
                 <div class="user_register">
                   <form>
-                    <label>Full Name</label>
-                    <input type="text" />
-                    <br />
-                    <label>Email Address</label>
-                    <input type="email" />
+                    <label>Username</label>
+                    <input id="userCreateInput" autocorrect="off" autocapitalize="off" autocomplete="off" type="text" />
                     <br />
                     <label>Password</label>
-                    <input type="password" />
+                    <input id="passCreateInput" autocorrect="off" autocapitalize="off" autocomplete="off" type="password" />
+                    <br />
+                    <label>Password</label>
+                    <input id="passRepeatCreateInput" autocorrect="off" autocapitalize="off" autocomplete="off" type="password" />
                     <br />
                     <div class="checkbox">
                       <input id="send_updates" type="checkbox" />
@@ -94,7 +104,7 @@
                     </div>
                     <div class="action_btns">
                       <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                      <div class="one_half last"><a href="#" class="btn btn_yellow">Register</a></div>
+                      <div class="one_half last"><a href="#" id="btn-admin-create" class="btn btn_yellow">Register</a></div>
                     </div>
           </form>
         </div>
@@ -104,6 +114,9 @@
         </div>
 	
 <script>
+    
+    //LOGIN
+    
 $("#btn-admin-login").click(function(){
     
    var sLoginUser = $("#txt-email").val();
@@ -134,7 +147,8 @@ $("#btn-admin-login").click(function(){
      "cache": false
      }).done( function(Data){
        if (Data == "loginpass") {
-          window.location.href = "approved.php";
+	  //header('Location: '.$_SERVER['REQUEST_URI']);
+	  location.reload();
        }else{
           var result = JSON.parse(Data);
           //sweetAlert(result.attempts);
@@ -146,4 +160,73 @@ $("#btn-admin-login").click(function(){
      })
    }
   });
+
+  //CREATE SECTION
+  
+$("#btn-admin-create").click(function(){
+  
+ var sCreateUser = $("#userCreateInput").val();
+ var sCreatePass = $("#passCreateInput").val();
+ var sCreatePassRepeat = $("#passRepeatCreateInput").val();
+ var sLink = "create-login.php?user=" + sCreateUser + "&pass=" + sCreatePass + "&passRepeat=" + sCreatePassRepeat;
+ 
+ //RESET ALL LABEL FIELDS
+ $("#CreateLabelUser").html("");
+ $("#CreateLabelPass").html("");
+ $("#CreateLabelPassRepeat").html("");
+ $("#CreateLabel").html("");
+ $("#CreateLabelOk").html("");
+ 
+ 
+if ( sCreateUser == "") {
+    $("#CreateLabelUser").html("Please fill out the field");
+}
+ 
+if ( sCreatePass == "") {
+    $("#CreateLabelPass").html("Please fill out the field");
+}
+
+if ( sCreatePassRepeat == "") {
+    $("#CreateLabelPassRepeat").html("Please fill out the field");
+}
+ 
+if ( sCreateUser !== "" && sCreatePass !== "" && sCreatePassRepeat != "") {
+  
+ $.ajax({
+   "url":sLink,
+   "dataType":"text",
+   "method":"post",
+   "cache": false
+   }).done( function(Data){
+    var result = JSON.parse(Data);
+
+    $("#CreateLabelUser").html(result.user);
+    $("#CreateLabelPass").html(result.pass);
+    $("#CreateLabelPassRepeat").html(result.passRepeat);
+    $("#CreateLabel").html(result.creation);
+    $("#CreateLabelOk").html(result.creationOk);
+     console.log(Data);
+   })
+ }
+});
+
+
+    //LOGOUT
+    
+$("#logout").click(function(){
+logout();
+});
+
+
+function logout(){
+$.ajax({
+"url":"destroy-session.php",
+"method":"post",
+"dataType":"text",
+"cache":false
+}).done(function(Data){
+location.reload();
+console.log(Data);
+})
+};
 </script>

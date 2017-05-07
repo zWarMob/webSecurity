@@ -90,14 +90,16 @@
     //$sql->bind_result($result1,$result2,$result3,$result4);
     //$result = $sql->fetch();
     $result = $sql->fetchAll();
+    $resultC = $sql->rowCount();
     
     //SET THE CURRENT TIME AS A VARIABLE
     /*$currentTime = new DateTime(date('Y-m-d H:i:s'));
     $databaseTime = new DateTime($result4);
     $difference = $databaseTime->diff($currentTime);*/
     
+    //print_r("rows:" + $resultC);
 
-    if($result==1 && password_verify($sPass, $result3) && $ban == 0 && $siteBan == 0){
+    if($resultC==1 && password_verify($sPass, $result[0]['Pass']) && $ban == 0 && $siteBan == 0){
         echo 'loginpass';
         $_SESSION['userSession'] = $nameSession;
         //echo $_SESSION['nameInput'];
@@ -171,16 +173,18 @@ if(!search_array($sUser, $ipCheckResult)) {
     //print_r(array_key_exists($sUser, $ipCheckResult['username'][2]));
     
     
-    if($ipCheckCount == 1 && search_array($sUser, $ipCheckResult) && $ban == 0 && $siteBan == 0){
+    if($ipCheckCount == 1 && search_array($sUser, $ipCheckResult) == 1 && $ban == 0 && $siteBan == 0){
         $errors['attempts'] = 'Incorrect login. <br>Your are allowed 4 more attempts within 10 minutes';
-    } elseif ($ipCheckCount > 1 && $ipCheckCount < 5 && search_array($sUser, $ipCheckResult) && $ban == 0 && $siteBan == 0){
+    } elseif ($ipCheckCount > 1 && $ipCheckCount < 5 && search_array($sUser, $ipCheckResult) == 1 && $ban == 0 && $siteBan == 0){
         $errors['attempts'] = 'Incorrect login';
     } elseif ($ipCheckCount == 5 && search_array($sUser, $ipCheckResult) && $ban == 0 && $siteBan == 0){
         //BAN IP IF THE NUMBER OF TRIES (ROWS RETURNED FROM THE SQL) IS 5
         $errors['attempts'] = 'Your are now banned for 5 minutes';
-        $lookSet = $con->prepare("INSERT INTO websecip (address,lockout,username,timestamp)VALUES(?,?,?,CURRENT_TIMESTAMP)");
+        $lookSet = $con->prepare("INSERT INTO websecip (address,lockout,username,timestamp)VALUES(:ip,:ip,:sUser,CURRENT_TIMESTAMP)");
         //$lookSet->bind_param('sss',$ip,$ip,$sUser);
-        $lookSet->bindParam('sss',$ip,$ip,$sUser);
+        $lookSet->bindParam(':ip',$ip);
+        $lookSet->bindParam(':ip',$ip);
+        $lookSet->bindParam(':sUser',$sUser);
         $lookSet->execute();
     }
     
