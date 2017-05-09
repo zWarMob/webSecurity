@@ -98,10 +98,15 @@
     $difference = $databaseTime->diff($currentTime);*/
     
     //print_r("rows:" + $resultC);
+    //print_r ($result[0]);
+    //print_r ($result[0]['id']);
 
+    
     if($resultC==1 && password_verify($sPass, $result[0]['pass']) && $ban == 0 && $siteBan == 0){
         echo 'loginpass';
+        $_SESSION['userIdSession'] = $result[0]['id'];
         $_SESSION['userSession'] = $nameSession;
+        //$_SESSION['userIdSession'] = "whatever";
         //echo $_SESSION['nameInput'];
         $query = $con->prepare("UPDATE websecusers SET loggedTime=NOW() WHERE user=:sUser");
         //$query->bind_param('s', $sUser);
