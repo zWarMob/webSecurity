@@ -2,7 +2,7 @@
 
     //SET A SESSION AND GET THE FORM PARAMETERS
     session_start();
-    $sUser = $_GET['user'];
+    $sUser = $_GET['email'];
     $sPass = $_GET['pass'];
     $nameSession = $sUser;
     
@@ -82,7 +82,7 @@
     
     
     //SUCCESSFUL LOGIN
-    $sql = $con->prepare("SELECT * FROM websecusers WHERE User=:sUser");
+    $sql = $con->prepare("SELECT * FROM websecusers WHERE user=:sUser");
     //$sql->bind_param('s', $sUser);
     $sql->bindParam(':sUser', $sUser);
     $sql->execute();
@@ -103,7 +103,7 @@
         echo 'loginpass';
         $_SESSION['userSession'] = $nameSession;
         //echo $_SESSION['nameInput'];
-        $query = $con->prepare("UPDATE websecusers SET LoggedTime=NOW() WHERE User=:sUser");
+        $query = $con->prepare("UPDATE websecusers SET loggedTime=NOW() WHERE user=:sUser");
         //$query->bind_param('s', $sUser);
         $query->bindParam(':sUser', $sUser);
         $query->execute();
