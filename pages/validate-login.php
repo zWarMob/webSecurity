@@ -99,7 +99,7 @@
     
     //print_r("rows:" + $resultC);
 
-    if($resultC==1 && password_verify($sPass, $result[0]['Pass']) && $ban == 0 && $siteBan == 0){
+    if($resultC==1 && password_verify($sPass, $result[0]['pass']) && $ban == 0 && $siteBan == 0){
         echo 'loginpass';
         $_SESSION['userSession'] = $nameSession;
         //echo $_SESSION['nameInput'];

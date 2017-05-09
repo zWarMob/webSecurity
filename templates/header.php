@@ -67,7 +67,7 @@
                 <!-- Username & Password Login form -->
                 <div class="user_login">
                   <form>
-                    <label>Email</label>
+                    <label>Username</label>
                     <input id="txt-email" type="email" placeholder="email"/>
 		    <h5 id="errorLabelUser" class="errorLabel"></h5>
                     <br />
@@ -124,7 +124,7 @@ $("#btn-admin-login").click(function(){
     
    var sLoginUser = $("#txt-email").val();
    var sLoginPass = $("#txt-password").val();
-   var sLink = "validate-login.php?email=" + sLoginEmail + "&pass=" + sLoginPass;
+   var sLink = "validate-login.php?email=" + sLoginUser + "&pass=" + sLoginPass;
    
    if ( sLoginUser == "") {
       $("#errorLabelUser").html("");
