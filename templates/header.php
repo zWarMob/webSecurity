@@ -21,7 +21,7 @@
 		    {
 			echo "<li id='login'><a id='modal_trigger' href='#modal'><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>Login</a></li>";
 		    }else{
-			echo "<li id='logout'><a id='modal_trigger' href='#modal'><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>Log out</a></li>
+			echo "<li id='logoutBtn'><a><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>Log out</a></li>
 			<li><span><i class='fa fa-sign-in' aria-hidden='true'></i></span>".$_SESSION['userSession']."</a></li>";
 		    }
 		  ?>
@@ -213,10 +213,23 @@ if ( sCreateUser !== "" && sCreatePass !== "" && sCreatePassRepeat != "") {
 
     //LOGOUT
     
-$("#logout").click(function(){
-logout();
+$("#logoutBtn").click(function(){
+//logout();
+logout2();
+console.log("Test logout");
 });
 
+function logout2(){
+$.ajax({
+"url":"destroy-session.php",
+"method":"post",
+"dataType":"text",
+"cache":false
+}).done(function(Data){
+location.reload();
+console.log("DATA LOG"+Data);
+})
+};
 
 function logout(){
 $.ajax({
@@ -226,7 +239,7 @@ $.ajax({
 "cache":false
 }).done(function(Data){
 location.reload();
-console.log(Data);
+console.log("DATA LOG"+Data);
 })
 };
 </script>
