@@ -2,10 +2,10 @@
     //SET A SESSION AND GET THE FORM PARAMETERS
     session_start();
     $sUser = $_GET['user'];
+    $sEmail = $_GET['email'];
     $sPass = $_GET['pass'];
     $sPassRepeat = $_GET['passRepeat'];
     $nameSession = $sUser;
-    
     
     //GET THE DB CONNECTION DETAILS
     require_once 'db_connect.php';
@@ -22,6 +22,12 @@
     //CHECK THE FORM INPUT
     if(strlen($sUser) < 8){
         $msg['user'] = 'Username has to be at least 8 characters long';
+    }
+    
+    if(!filter_var($sEmail, FILTER_VALIDATE_EMAIL) === false){
+        //$msg['email'] = 'Thats not a valid email';
+    }else{
+        $msg['email'] = 'Thats not a valid email';
     }
     
     if(strlen($sPass) < 8){
@@ -49,8 +55,9 @@
     //CREATE USER IF EVERTHING IS OK
     //MAKE IT A LOT SIMPLER = CHECK MSG ARRAY INSTEAD!
     if(strlen($sUser) >= 8 && strlen($sPass) >= 8 && $sPass == $sPassRepeat && $result == false){
-        $createSql = $con ->prepare ("INSERT INTO websecusers (User,Pass,LoggedTime) VALUES (:sUser,:Pass,CURRENT_TIMESTAMP)");
+        $createSql = $con ->prepare ("INSERT INTO websecusers (user,email,pass,loggedTime) VALUES (:sUser,:sEmail,:Pass,CURRENT_TIMESTAMP)");
         $createSql ->bindParam(':sUser', $sUser);
+        $createSql ->bindParam(':sEmail', $sEmail);
         $createSql ->bindParam(':Pass', $passwordHash);
         $createSql ->execute();
         $msg['creationOk'] = 'Profile has successfully been created';

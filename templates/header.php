@@ -92,6 +92,9 @@
                     <label>Username</label>
                     <input id="userCreateInput" autocorrect="off" autocapitalize="off" autocomplete="off" type="text" />
                     <br />
+		    <label>Email</label>
+                    <input id="emailCreateInput" autocorrect="off" autocapitalize="off" autocomplete="off" type="text" />
+                    <br />
                     <label>Password</label>
                     <input id="passCreateInput" autocorrect="off" autocapitalize="off" autocomplete="off" type="password" />
                     <br />
@@ -121,7 +124,7 @@ $("#btn-admin-login").click(function(){
     
    var sLoginUser = $("#txt-email").val();
    var sLoginPass = $("#txt-password").val();
-   var sLink = "validate-login.php?user=" + sLoginUser + "&pass=" + sLoginPass;
+   var sLink = "validate-login.php?email=" + sLoginEmail + "&pass=" + sLoginPass;
    
    if ( sLoginUser == "") {
       $("#errorLabelUser").html("");
@@ -166,12 +169,14 @@ $("#btn-admin-login").click(function(){
 $("#btn-admin-create").click(function(){
   
  var sCreateUser = $("#userCreateInput").val();
+ var sCreateEmail = $("#emailCreateInput").val();
  var sCreatePass = $("#passCreateInput").val();
  var sCreatePassRepeat = $("#passRepeatCreateInput").val();
- var sLink = "create-login.php?user=" + sCreateUser + "&pass=" + sCreatePass + "&passRepeat=" + sCreatePassRepeat;
+ var sLink = "create-login.php?user=" + sCreateUser + "&email=" + sCreateEmail + "&pass=" + sCreatePass + "&passRepeat=" + sCreatePassRepeat;
  
  //RESET ALL LABEL FIELDS
  $("#CreateLabelUser").html("");
+ $("#CreateLabelEmail").html("");
  $("#CreateLabelPass").html("");
  $("#CreateLabelPassRepeat").html("");
  $("#CreateLabel").html("");
@@ -180,6 +185,10 @@ $("#btn-admin-create").click(function(){
  
 if ( sCreateUser == "") {
     $("#CreateLabelUser").html("Please fill out the field");
+}
+
+if ( sCreateEmail == "") {
+    $("#CreateLabelEmail").html("Please fill out the field");
 }
  
 if ( sCreatePass == "") {
@@ -190,7 +199,7 @@ if ( sCreatePassRepeat == "") {
     $("#CreateLabelPassRepeat").html("Please fill out the field");
 }
  
-if ( sCreateUser !== "" && sCreatePass !== "" && sCreatePassRepeat != "") {
+if ( sCreateUser !== "" && sCreateEmail !== "" && sCreatePass !== "" && sCreatePassRepeat != "") {
   
  $.ajax({
    "url":sLink,
@@ -201,6 +210,7 @@ if ( sCreateUser !== "" && sCreatePass !== "" && sCreatePassRepeat != "") {
     var result = JSON.parse(Data);
 
     $("#CreateLabelUser").html(result.user);
+    $("#CreateLabelEmail").html(result.email);
     $("#CreateLabelPass").html(result.pass);
     $("#CreateLabelPassRepeat").html(result.passRepeat);
     $("#CreateLabel").html(result.creation);
