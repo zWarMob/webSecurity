@@ -76,7 +76,6 @@ firstname VARCHAR(50),
 lastname VARCHAR(50),
 age INT,
 adress VARCHAR(250) NOT NULL,
-
 timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (userId) REFERENCES websecusers (id),
 PRIMARY KEY (id)
@@ -92,3 +91,18 @@ DROP TABLE websecusers;
 
 USE sys;
 DROP TABLE websecreviews;
+
+
+----------------------------------------------------------------------------
+STORED PROCEDURE
+
+
+USE sys;
+GO
+
+CREATE PROCEDURE testStored
+AS
+SELECT * FROM websecuserinfo
+GO
+
+EXEC testStored
