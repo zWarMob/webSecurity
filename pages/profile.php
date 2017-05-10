@@ -8,23 +8,16 @@ ini_set('display_errors', 1);
 */
 //GET THE DB CONNECTION DETAILS
 require_once 'db_connect.php';
-$user = "0001";
 
-$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE ?");
-$result->bind_param('s', $user);
+
+$user = $_SESSION['userIdSession'];
+
+//$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE :user");
+$result = $con->prepare("SELECT * FROM websecuserinfo JOIN websecreviews ON websecuserinfo.userId WHERE user LIKE :user");
+$result->bindParam(':user', $user);
 $result->execute();
-$result->store_result();
-$result->bind_result($id,$user,$reviewer,$comment, $rating, $rDate);
-/*$resultCheckResult = $result->fetch();*/
-$resultCheckCount = $result->num_rows;
-
-/*
-while($result->fetch()) {
-    
-    echo $id;
-}*/
-
-printf ($resultCheckCount);
+$resultCheckCount = $result->rowCount();
+$result = $result->fetchAll();
     
 ?>
 
@@ -35,15 +28,25 @@ printf ($resultCheckCount);
                                     <p class="">Name</p>
                                     <p class="">City</p>
                                     <p class="">Age</p>
-                                    <p class="">...</p>
-                                    <p class="">...</p>
+                                    <p class="">Avg rating</p>
                         </div>
                         <div>
-                                    <p class="">Thao</p>
-                                    <p class="">Copenhagen</p>
-                                    <p class="">24</p>
-                                    <p class="">...</p>
-                                    <p class="">...</p>
+                                    <p class=""><?php echo $result[0]['firstname']?></p>
+                                    <p class=""><?php if($result[0]['adress'] != ""){
+                                                         echo $result[0]['adress'];
+                                                         }else{
+                                                            echo '...';
+                                                }?></p>
+                                    <p class=""><?php if($result[0]['age'] != ""){
+                                                            echo $result[0]['age'];
+                                                }else{
+                                                            echo '...';
+                                                }?></p>
+                                    <p class=""><?php $finalRating = 0;
+                                    foreach($result as $eachRating){
+                                          $finalRating += $eachRating['rating'];      
+                                    }
+                                    echo $finalRating/$resultCheckCount;?></p>
                         </div>
             </div>
             <div class="img-s-150 m-l-r-50">
@@ -81,9 +84,10 @@ printf ($resultCheckCount);
                                         if ($resultCheckCount == 0){
                                   echo "<h1>No reviews have been made yet</h1>";
                                         }
-                while($result->fetch()) {
+                /*while($result->fetch()) {*/
+                foreach($result as $each){
                 
-                                    switch ($rating){
+                                    switch ($each['rating']){
                                                 case "1":
                                                 echo "
                                                 <div class='b-2 m-30'>
@@ -155,9 +159,9 @@ printf ($resultCheckCount);
                                                 
                                     </div>
                                     <div class=\"f-sp\">
-                                    <p class=\"w-300 f-grow\">$comment</p>
-                                    <p class=\"w-300 f-08-ir\">User: $reviewer</p>
-                                    <p class=\"w-300 f-08-ir\">Date: $rDate</p>
+                                    <p class=\"w-300 f-grow\">".$each['comment']."</p>
+                                    <p class=\"w-300 f-08-ir\">User:". $each['reviewer']."</p>
+                                    <p class=\"w-300 f-08-ir\">Date:". $each['reviewTime']."</p>
                                     </div>
                         </div>
                 </div>";}?>
