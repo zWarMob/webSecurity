@@ -1,7 +1,11 @@
 <?php
-
+            session_start();
+if(!isset($_SESSION['userIdSession'])){
+            header('Location: http://188.226.140.143/pages/index.php');
+}
 include('../templates/mStart.php');
 include('../templates/header.php');
+
 /*
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -11,6 +15,7 @@ require_once 'db_connect.php';
 
 
 $user = $_SESSION['userIdSession'];
+echo $_SESSION['userIdSession'];
 
 //$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE :user");
 $result = $con->prepare("SELECT * FROM websecuserinfo JOIN websecreviews ON websecuserinfo.userId WHERE user LIKE :user");
@@ -77,13 +82,14 @@ $rentals = $rentals->fetchAll();
                         <?php
                         foreach($rentals as $each){
                                     
-                                    echo "<div class='b-2 m-20'><div class='img-s-150 m-l-r-50'>
+                                    echo "<div class='b-2 m-20 p-20'><div class='img-s-150 m-auto'>
                                     <img src='../images/genericItem.png' class='img-100' alt='Profile'>
                                     
                                     </div>
-                                    <p class='w-300 m-20'>".$each['title']."</br>
-                                    ".$each['des'].
-                                    "</div>";
+                                    <p class='w-300 f-w-600 txt-align-center'>".$each['title']."</p></br>
+                                    <p class='w-300'>".$each['des'].
+                                    "</p><br><p class='w-300 txt-align-center'>Price: ".$each['price'].
+                                    "</p></div>";
                         }
                         
                         $replace = "{{cCONTENT}}"; ?> </p>
