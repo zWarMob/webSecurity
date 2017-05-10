@@ -1,5 +1,5 @@
 <?php
-            session_start();
+
 if(!isset($_SESSION['userIdSession'])){
             header('Location: http://188.226.140.143/pages/index.php');
 }
