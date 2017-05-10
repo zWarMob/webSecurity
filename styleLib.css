@@ -41,6 +41,9 @@ BORDER
 MARGIN
 */
 
+.m-auto {
+	margin: auto;
+}
 
 .m-t-10{
 	margin-top:10px;

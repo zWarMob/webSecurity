@@ -14,10 +14,18 @@ $user = $_SESSION['userIdSession'];
 
 //$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE :user");
 $result = $con->prepare("SELECT * FROM websecuserinfo JOIN websecreviews ON websecuserinfo.userId WHERE user LIKE :user");
+//$result = $con->prepare("SELECT * FROM websecuserinfo JOIN websecreviews ON websecuserinfo.userId JOIN websecrentals ON websecrentals.userId WHERE user LIKE :user");
 $result->bindParam(':user', $user);
 $result->execute();
 $resultCheckCount = $result->rowCount();
 $result = $result->fetchAll();
+
+
+$rentals = $con->prepare("SELECT * FROM websecrentals WHERE userId LIKE :user");
+$rentals->bindParam(':user', $user);
+$rentals->execute();
+$rentalsCheckCount = $rentals->rowCount();
+$rentals = $rentals->fetchAll();
     
 ?>
 
@@ -65,12 +73,20 @@ $result = $result->fetchAll();
             
             <h1 class="h1-c">CURRENT RENTALS</h1>
             <!-- TEMPLATE !!! -->
-            <div class="h-200 f-c m-20">
-                        <div class="img-s-150 m-l-r-50">
-                                    <img src="../images/genericItem.png" class="img-100" alt="Profile">
+            <div class="h-200 f-cl-c m-20">
+                        <?php
+                        foreach($rentals as $each){
                                     
-                        </div>
-                        <p class="w-300"> <?php $replace = "{{cCONTENT}}"; ?> </p>
+                                    echo "<div class='b-2 m-20'><div class='img-s-150 m-l-r-50'>
+                                    <img src='../images/genericItem.png' class='img-100' alt='Profile'>
+                                    
+                                    </div>
+                                    <p class='w-300 m-20'>".$each['title']."</br>
+                                    ".$each['des'].
+                                    "</div>";
+                        }
+                        
+                        $replace = "{{cCONTENT}}"; ?> </p>
             </div>
             <!-- TEMPLATE END !!! -->
     </div>
