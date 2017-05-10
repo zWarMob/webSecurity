@@ -1,7 +1,7 @@
 <?php
 
     //SET A SESSION AND GET THE FORM PARAMETERS
-    session_start();
+    //session_start();
     $sUser = $_GET['email'];
     $sPass = $_GET['pass'];
     $nameSession = $sUser;
