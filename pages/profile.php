@@ -1,10 +1,10 @@
 <?php
-
+/*
 if(!isset($_SESSION['userIdSession'])){
             header('Location: http://188.226.140.143/pages/index.php');
-}
-include('../templates/mStart.php');
-include('../templates/header.php');
+}*/
+//include('../templates/mStart.php');
+//include('../templates/header.php');
 
 /*
 error_reporting(E_ALL);
@@ -13,9 +13,12 @@ ini_set('display_errors', 1);
 //GET THE DB CONNECTION DETAILS
 require_once 'db_connect.php';
 
+//echo $profileId;
 
-$user = $_SESSION['userIdSession'];
-echo $_SESSION['userIdSession'];
+$user = $profileId;
+//$user = $_GET['username'];
+//$user = $_SESSION['userIdSession'];
+//echo $_SESSION['userIdSession'];
 
 //$result = $con->prepare("SELECT * FROM websecreviews WHERE user LIKE :user");
 $result = $con->prepare("SELECT * FROM websecuserinfo JOIN websecreviews ON websecuserinfo.userId WHERE user LIKE :user");
@@ -195,7 +198,7 @@ $rentals = $rentals->fetchAll();
 echo str_replace("{{cCONTENT}}","hello",$replace);
 */
 
-include('../templates/footer.php');
-include('../templates/mEnd.php');
+//include('../templates/footer.php');
+//include('../templates/mEnd.php');
 
 ?>
